@@ -1,0 +1,15 @@
+package com.tcs.utils;
+
+import org.springframework.stereotype.Component;
+
+import com.tcs.domain.Product;
+
+@Component
+public class Mapper {
+	
+	public productDto DtotoEntity(Product entity) {
+		return null;
+		
+	}
+
+}

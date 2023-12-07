@@ -1,0 +1,6 @@
+package com.tcs.service;
+
+public interface iProductService {
+	public ProductDto addProduct(ProductDto productDto);
+
+}

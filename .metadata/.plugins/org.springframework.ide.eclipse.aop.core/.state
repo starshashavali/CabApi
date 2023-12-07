@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="ServiceRegistryApp"/>
+<aop-project name="APIService"/>
+<aop-project name="ProductConsumerService"/>
+<aop-project name="FeignApp"/>
+</aop-reference-model>

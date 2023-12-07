@@ -1,0 +1,43 @@
+package com.tcs.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tcs.domain.Product;
+import com.tcs.dto.ProductDto;
+import com.tcs.repo.ProductRepo;
+import com.tcs.service.ProductService;
+import com.tcs.utils.Mapper;
+@Service
+public class ProductServiceImpl implements ProductService {
+	
+	@Autowired
+	private ProductRepo productRepo;
+	@Autowired
+	private Mapper mapper;
+
+	@Override
+	public ProductDto addProduct(ProductDto productDto) {
+		Product entityToDto = mapper.entityToDto(productDto);
+		Product entity = productRepo.save(entityToDto);
+		ProductDto producDto = mapper.DtotoEntity(entity);
+		return producDto;
+	}
+
+	@Override
+	public ProductDto getProductDtls(Integer id) {
+		productRepo.findById(id).orElseThrow(()->
+		new IdNotFoundException("Idnot Found Exception::"+id));
+		
+		return null;
+	}
+
+	@Override
+	public List<ProductDto> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
